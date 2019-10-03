@@ -1,0 +1,22 @@
+main {
+    background-image: url('../assets/images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom right;
+}
+
+.main {
+    min-height: calc(100vh - 200px);
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1.2em;
+}
+
+@media (min-width: 768px){ 
+    .main {
+        grid-template-columns: 1fr 1fr;
+    }
+}

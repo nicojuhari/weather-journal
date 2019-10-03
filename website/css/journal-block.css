@@ -1,0 +1,55 @@
+.journal-record {
+    padding: 1em;
+    box-shadow: 0px 0px 24px 3px rgba(193, 193, 193, 0.48);
+    border: 1px solid rgba(204, 204, 204, 0.3);
+    margin-bottom: 1em;
+}
+
+.journal-record.hide,
+.journal-record-placeholder.hide {
+    display: none;
+}
+
+.journal-record > div {
+    margin-bottom: 1em;
+}
+
+.journal-record-placeholder {
+    background-image: url("../assets/icons/logo.svg");
+    width: 100%;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: 0.15;
+}
+
+.jr-weather {
+    width: 30%;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.jr-icon {
+    width: 40px;
+    height: 40px;
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.journal-record .label {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    color: #FF6700;
+    display: inline-block;
+}
+
+.jr-date {
+    font-weight: bold;
+}
+
+.jr-temp {
+    color: #00b698;
+    font-weight: bold;
+}

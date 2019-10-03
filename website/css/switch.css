@@ -1,0 +1,43 @@
+#switch input {
+    display: none;
+}
+.switch-buttons {
+    background-color: #464646;
+    position: relative;
+    width: 90px;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 40px;
+}
+
+.switch-buttons span{
+    width: 45px;
+    height: 40px;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.switch-buttons:after {
+    content: '';
+    display: block;
+    width: 45px;
+    height: 40px;
+    background-color: #FF6700;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    transition: all 0.6s;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+#degree_units:checked + div.switch-buttons:after {
+    left: 45px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}

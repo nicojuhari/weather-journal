@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Weather Journal App</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/styles.css" rel="stylesheet"/>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="header flex-between-center container">
+                <div class="logo"></div>
+                <div id="switch">
+                    <label>
+                        <input type="checkbox" id="degree_units"/>
+                        <div class="switch-buttons flex-center-center">
+                            <span class="celsius flex-center-center">&deg;C</span>
+                            <span class="fahrenheit flex-center-center">&deg;F</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="main container">
+                <div class="entry-block block">
+                    <h2 class="block-title">Add a Record to Your Journal</h2>
+                    <div class="block-insert">
+                        <input type="text" name="zip" id="zip" placeholder="Enter Zip Code Here">
+                        <textarea id="feelings" placeholder="Describe your feelings here..."></textarea>
+                        <button id="generate" class="btn">Add the Record</button>
+                    </div>
+                    <div id="entryHolder" class="journal-record hide">
+                        <span class="label">Date:</span>
+                        <div id="date" class="jr-date"></div>
+                        
+                        <span class="label">Temperature:</span>
+                        <div id="temp" class="jr-temp"></div>
+                        
+                        <span class="label">Description:</span>
+                        <div id="content" class="jr-content"></div>
+                    </div>
+                    <div class="journal-record-placeholder"></div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer flex-between-center container">
+                <div class="copyright">
+                    Weather Journal &copy; 2019
+                </div>
+                <div class="social-buttons">
+                    <li><a class="s-icon fb" target="_blank" title="Facebook" href="https://www.facebook.com/nicojuhari"></a></li>
+                    <li><a class="s-icon in" target="_blank" title="Linkedin" href="https://www.linkedin.com/in/nicojuhari/"></a></li>
+                    <li><a class="s-icon gh" target="_blank" title="GitHub" href="https://github.com/nicojuhari"></a></li>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

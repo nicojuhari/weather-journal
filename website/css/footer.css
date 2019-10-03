@@ -1,0 +1,52 @@
+footer {
+    background-color: #464646;
+}
+.footer {
+    height: 100px;
+    color: #fff;
+    flex-direction: column;
+}
+
+.copyright {
+    margin-bottom: 1em;
+}
+
+.social-buttons {
+    display: flex;
+}
+
+.s-icon{
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 0 5px;
+    background-size: contain;
+    background-position: center center;
+}
+
+.s-icon.fb {
+    background-image: url(../assets/icons/fb.svg);
+}
+
+.s-icon.in {
+    background-image: url(../assets/icons/in.svg);
+}
+
+.s-icon.gh {
+    background-image: url(../assets/icons/gh.svg);
+}
+
+@media(min-width:768px){
+    
+    .footer {
+        flex-direction: row;
+    }
+    
+    .copyright {
+        margin-bottom: 0;
+    }
+    
+    .s-icon{
+        margin: 0 0 0 10px;
+     }
+}

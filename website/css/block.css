@@ -1,0 +1,15 @@
+@import "entry-block.css";
+@import "journal-block.css";
+
+.block {
+    background-color: #fff;
+    padding: 1.2em;
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2);
+}
+
+.block-title {
+    margin: 1em 0 1.2em;
+    text-align: center;
+    line-height: 1.3;
+}
+
