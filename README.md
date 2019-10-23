@@ -7,8 +7,8 @@ HTML, CSS, JavaScript, Node.js, Express.js, API
 1. Install Node.js and Express.js
 2. Initiate the local server: server.js
 4. Fetch the weather from [OpenWeatherMap](https://openweathermap.org/) API
-5. Save the record in the object on local server
-6. The record should inlude : date, weather, fillings
+5. Save the record in the object on the local server
+6. The record should include: date, weather, fillings
 7. Get the Data from the local server and update the UI
 
 ## What the app is doing ?
