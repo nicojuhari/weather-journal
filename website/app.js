@@ -65,14 +65,21 @@ const postJournalRecord = async (url = '', data = {}) => {
 } //end postJournalRecord
 
 /* Add the Journal Data to the Page (Update UI) */
-const updateUI = (data) => {
+const updateUI = (items) => {
+  let htmlData = items.map((item => {
+        return `<div class="journal-record">
+                  <span class="label">Date:</span>
+                  <div class="jr-date">${item.date}</div>
+                  
+                  <span class="label">Temperature:</span>
+                  <div data-kelvins='${item.temp}' class="jr-temp">${convertDegrees(item.temp)}</div>
+                  
+                  <span class="label">Description:</span>
+                  <div class="jr-content">${item.content}</div>
+                </div>`;
+  })).join(" ");
 
-  document.querySelector('.journal-record-placeholder').classList.add('hide');
-  document.getElementById('entryHolder').classList.remove('hide');
-  document.getElementById('date').innerHTML = data.date;
-  document.getElementById('temp').innerHTML = convertDegrees(data.temp);
-  document.getElementById('temp').setAttribute('data-kelvins', data.temp);
-  document.getElementById('content').innerHTML = data.content;
+  document.querySelector('.output-block').innerHTML = htmlData;
 
 }
 
@@ -114,8 +121,20 @@ const addRecordToJournal = () => {
 
 const addJournalRecordsToPage = () => {
   getJournalRecords('/getRecords').then(data => {
-    Object.getOwnPropertyNames(data).length !== 0 ? updateUI(data) : '';
+    data.length >= 1 ? updateUI(data) : '';
   });
+}
+
+const updateDegreesUI = () => {
+
+  //get the UI
+  let allJrTemps = document.querySelectorAll('.jr-temp');
+  
+  Array.from(allJrTemps).forEach(temp => {
+    let newTempFormat = convertDegrees(temp.getAttribute('data-kelvins'))
+    temp.innerHTML = newTempFormat;
+  })
+  
 }
 
 //end functions declarations
@@ -136,8 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /*Event Listener: Change => degrees switcher  */
   degreeSwitcher.addEventListener('change', () => {
-    const newTempFormat = convertDegrees(document.getElementById('temp').getAttribute('data-kelvins'));
-    document.getElementById('temp').innerHTML = newTempFormat;
+    updateDegreesUI();
   });
 
   /*Event Listener: Keyup => when type in the zip input  */

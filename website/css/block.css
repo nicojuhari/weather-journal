@@ -1,4 +1,5 @@
 @import "entry-block.css";
+@import "output-block.css";
 @import "journal-block.css";
 
 .block {

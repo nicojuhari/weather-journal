@@ -6,7 +6,7 @@ const cors = require('cors');
 /* Declare Variables*/
 const port = 8000;
 const app = express();
-const projectData = {};
+const projectData = [];
 
 /* General Configs */
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -30,10 +30,12 @@ app.get('/getRecords', (req, res) => {
 
 /* POST Request => Add/Register a Record to the Journal(projectData) */
 app.post('/addRecord', (req, res) => {
-    
-    projectData.date = req.body.date;
-    projectData.temp = req.body.temp;
-    projectData.content = req.body.content;
+    let dataObject = {}
+    dataObject.date = req.body.date;
+    dataObject.temp = req.body.temp;
+    dataObject.content = req.body.content;
+
+    projectData.push(dataObject);
 
     res.send(true);
 });
